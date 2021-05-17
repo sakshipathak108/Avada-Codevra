@@ -57,6 +57,6 @@ def loginuser(request):
                 return HttpResponseRedirect('/admin')
 
         else:
-            return render(request,'beforereg/login.html', {'alert': "Please enter correct credentials"})
+            return render(request,  'beforereg/login.html', {'alert': "Please enter correct credentials"})
 
-    return render(request,'beforereg/login.html')
+    return render(request,  'beforereg/login.html')
