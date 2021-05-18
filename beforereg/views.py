@@ -1,12 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from django.contrib.auth import login, authenticate, logout
-from django.views.generic import View
 from django.http import HttpResponse, HttpResponseRedirect
-from django.template import loader
-from .forms import UserForm
 from django.shortcuts import render
 from beforereg.models import register_table
 from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -50,13 +49,24 @@ def loginuser(request):
         if detailsx:
             login(request, detailsx)
             if detailsx.is_active:
-                return render(request, 'beforereg/login.html', {'logalert': "Logged In Successfully"})
+                return redirect('/dashboard')
         if detailss:
             login(request, detailss)
             if detailss.is_superuser:
                 return HttpResponseRedirect('/admin')
-
         else:
-            return render(request,'beforereg/login.html', {'alert': "Please enter correct credentials"})
+            return render(request, 'beforereg/login.html', {'alert': "Please enter correct credentials"})
 
-    return render(request,'beforereg/login.html')
+    return render(request, 'beforereg/login.html')
+
+@login_required(login_url='/login')
+def afterlogindash(request):
+    return render(request, 'afterlogin/dashboard.html')
+
+@login_required
+def logout_user(request):
+    logout(request)
+    return HttpResponseRedirect('/home')
+
+
+
