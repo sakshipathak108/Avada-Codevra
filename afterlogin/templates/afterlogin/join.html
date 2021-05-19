@@ -1,3 +1,4 @@
+{%  load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,20 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hats n colleagues | Join a team</title>
-    <link href="styling/sjoin.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'afterlogin/sjoin.css' %}">
+
 </head>
 
 <body>
     <div class="dabba">
         <div class="navbar">
-            <img src="images/logo1.jpeg" alt="logo" class="logo">
+            <img src="{% static 'beforereg/images/logo1.jpeg' %}" alt="logo" class="logo">
             <nav>
                 <ul>
-                    <li><a href="dashboard.html">Home</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="/dashboard/">Home</a></li>
+                    <li><a href="/loggedin/contactus/">Contact us</a></li>
                     <li><a href="#">Join a team</a></li>
-                    <li><a href="find.html">Find a teammate</a></li>
-                    <li><a href="#">Sign out</a></li>
+                    <li><a href="/loggedin/find/">Find a teammate</a></li>
+                    <li><a href="{% url 'logoutuser' %}">Sign out</a></li>
                 </ul>
             </nav>
         </div>
@@ -29,11 +31,12 @@
     </div>
     <div class="box">
         <div class="right">
-            <form action="">
+            <form action="" method="post">
+                {% csrf_token %}
                 <p class="txt">
                     <label for="choose">CHOOSE AN EVENT : </label>
                 </p><br>
-                <input list="events" name="event" placeholder="Select" class="rect">
+                <input list="events" name="eventjoin" placeholder="Select" class="rect">
                 <datalist id="events">
                     <option value="Devjam">
                     <option value="Codestart">
@@ -48,19 +51,24 @@
             <p class="text">WANNA JOIN A TEAM...</p>
         </div>
     </div>
+    {% if accdrop %}
+    {% for x in accdrop %}
     <div class="container">
         <div class="upper-container">
-            <img src="images/pic.png" alt="pic" class="pic">
+             <img src="{% static 'afterlogin/images/pic.png' %}" alt="pic" class="pic">
         </div>
         <div class="lower-container">
-          <p class="naam">Divya Dubey</p>
-          <p class="little">Looking for a skillful person to help me in frontend development. Should be well acknowleged
-            with html and css.</p>
-          <div>
-            <button onclick="document.location='profile.html' " name="profile" type="button" class="view">View Profile</button>
-          </div>
+             <p class="naam">{{ x.fname_event }}</p>
+             <p class="little">
+                 {{ x.rqd_skills }}
+             </p>
+             <div>
+                 <button onclick="document.location.href ='{% url 'afterlogin:profile' x.id %}' " name="profile" type="button" class="view">View Profile</button>
+            </div>
         </div>
-      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
         <footer>
             <div class="social">
                 <h3 class="foot">

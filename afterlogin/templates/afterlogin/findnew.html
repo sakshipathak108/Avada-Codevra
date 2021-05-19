@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hats n colleagues | Find a teammate</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'afterlogin/sfindnew.css' %}">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="{% static 'beforereg/images/logo1.jpeg' %}" alt="logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/dashboard/">Home</a></li>
+                    <li><a href="/loggedin/contactus/">Contact us</a></li>
+                    <li><a href="/loggedin/join/">Join a team</a></li>
+                    <li><a href="">Find a teammate</a></li>
+                    <li><a href={% url 'logoutuser' %}>Sign out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="bg">
+    <div class="loginp">
+        <form action="" method="post" name="myForm"><div class="new">
+            {% csrf_token %}
+        <input list="events" name="eventdrop" placeholder="Choose an event" class="rect">
+                <datalist id="events" >
+                    <option value="Devjam">
+                    <option value="Codestart">
+                    <option value="Robo club competition">
+                    <option value="Hack 36">
+                </datalist>
+            </div>
+          <input type="text" name="funame" class="top" placeholder="First name" required>
+          <input type="text" name="lname" class="top" placeholder="Last name" required>
+          <input type="text" name="msid" class="top" placeholder="MS Team's Id" required>
+          <textarea class="skill top" name="skills" id="skills" placeholder="Skills you are looking for in your teammate " cols="120" rows="9" required></textarea>
+          <input type="submit" name="signin" class="submit top" value="Find a teammate"><br>
+        </form>
+      </div>
+      </div>
+        <footer>
+            <div class="social">
+                <h3 class="foot">
+                    STAY CONNECTED !
+                </h3>
+                <div class="middle">
+                    <ul class="last">
+                        <li><a href="https://www.linkedin.com/in/anurag-singh-5aa76120b" target="_blank">Linkedin</a>
+                        </li>
+                        <li><a href="https://www.instagram.com/hats.andcolleagues/" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>

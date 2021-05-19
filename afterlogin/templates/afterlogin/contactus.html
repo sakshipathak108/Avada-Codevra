@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hats and Colleagues | Contact us</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'afterlogin/scontact.css' %}">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+          <img src="{% static 'afterlogin/images/logo1.jpeg' %}" alt="logo" class="logo">
+          <nav>
+            <ul>
+                <li><a href="/dashboard/">Home</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="/loggedin/join">Join a team</a></li>
+                <li><a href="/loggedin/find">Find a teammate</a></li>
+                <li><a href="{% url 'logoutuser' %}">Sign out</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    <div class="contact">
+        <p class="over">Contact Us</p>
+    </div>
+    <p class="para">
+    <p>
+    <h3 class="big">GIVE US A FEEDBACK!</h3>
+    <h3 class="small">Your feedback is valuable to us.<br> For feedback, email us at
+        <em>hatsandcolleagues@gmail.com</em>
+    </h3>
+
+    </p>
+    <p>
+    <h3 class="big">HAVE A QUERY?</h3>
+    <h3 class="small">For any website related query, email us at hatsandcolleagues@gmail.com </h3>
+    </p>
+    <footer>
+        <div class="social">
+            <h3 class="foot">
+                STAY CONNECTED !
+            </h3>
+            <div class="middle">
+                <ul class="last">
+                    <li><a href="https://www.linkedin.com/in/anurag-singh-5aa76120b" target="_blank">Linkedin</a>
+                    </li>
+                    <li><a href="https://www.instagram.com/hats.andcolleagues/" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    </p>
+</body>
+
+</html>

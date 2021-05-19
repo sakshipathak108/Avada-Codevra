@@ -1,3 +1,4 @@
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,33 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hats n colleagues | Profile</title>
-    <link href="styling/sprofile.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'afterlogin/sprofile.css' %}">
+
 </head>
 <body>
     <div class="dabba">
         <div class="navbar">
-            <img src="images/logo1.jpeg" alt="logo" class="logo">
+            <img src="{% static 'beforereg/images/logo1.jpeg' %}" alt="logo" class="logo">
             <nav>
                 <ul>
-                    <li><a href="dashboard.html">Home</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
-                    <li><a href="#">Join a team</a></li>
-                    <li><a href="find.html">Find a teammate</a></li>
-                    <li><a href="#">Sign out</a></li>
+                    <li><a href="/dashboard/">Home</a></li>
+                    <li><a href="/loggedin/contactus/">Contact us</a></li>
+                    <li><a href="/loggedin/join/">Join a team</a></li>
+                    <li><a href="/loggedin/find/">Find a teammate</a></li>
+                    <li><a href="{% url 'logoutuser' %}">Sign out</a></li>
                 </ul>
             </nav>
         </div>
     </div>
     <div class="box">
         <div class="more">
-                <div class="textm"><br>DEVJAM</div>
+                <div class="textm"><br>{{ alldetails.eventchosen }}</div>
         </div>
         <div class="less">
-            <div class="big"> Divya Dubey</div>
+            <div class="big">{{ alldetails.fname_event }}</div>
             <ul class="list">
                 <li>
                     <span class="heading">MS Team's ID: </span>
-                    <span class="material">divya.20208976@mnnit.ac.in</span>
+                    <span class="material">{{ alldetails.msid_event }}</span>
                 </li>
                 <li>
                     <span class="heading">Registration number: </span>
@@ -40,20 +42,19 @@
                 </li>
                 <li>
                     <span class="heading">Branch: </span>
-                    <span class="material">Civil Engineering</span>
+                    <span class="material">{{ rootdet.branch }}</span>
                 </li>
                 <li>
                     <span class="heading">Skills:</span>
-                    <span class="material">a quick brown fox jumps over the lazy dog</span>
+                    <span class="material">{{ rootdet.skills }}</span>
                 </li>
                 <li>
                     <span class="heading">Required Skills: </span>
-                    <span class="material">Looking for a skillful person to help me in frontend development. Should be
-                        well acknowleged
-                        with html and css.</span>
+                    <spann class="material">{{ alldetails.rqd_skills}}
+                    </spann>
                 </li>
             </ul>
-            <img src="images/photo1.jpeg" alt="man on comp" class="man">
+            <img src="{% static 'afterlogin/images/photo1.jpeg' %}" alt="man on comp" class="man">
         </div>
     </div>
 </body>

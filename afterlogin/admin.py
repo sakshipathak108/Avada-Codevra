@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+from afterlogin.models import findform
+admin.site.register(findform)
