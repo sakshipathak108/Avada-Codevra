@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
   <meta charset="UTF-8">
@@ -27,19 +27,18 @@
         </div>
     </div>
     <div class="loginp">
-    <form action="" onsubmit="return validateForm()" method="post" name="myform">
+    <form action=""  method="post" name="myform">
         {% csrf_token %}
         <input type="text" name="first_name" class="top" placeholder="First Name"  required>
-        <input type="text" name="last_name" class="top" placeholder="Last Name"  required>
-        <input type="email" name="email" id="id_reg_no" placeholder="MS Team's Id" class="tooltip" required><span
-            class="tooltiptext"></span>
+        <input type="text" name="last_name" placeholder="Last Name"  required>
+        <input type="email" name="email" id="id_reg_no" placeholder="MS Team's Id" class="tooltip" required>
         <input type="password" name="password" placeholder="Password" required>
         <input type="text" name="branch" id="branch" placeholder="Branch" required>
         <textarea class="skill" name="skills" id="skills" placeholder="Skills" cols="120" rows="9"></textarea>
         <input type="submit" class="button" value="Sign Up">
         <div class="link"> <a href="/login/" >Already have an account? Sign in here</a><br></div>
     </form>
-    </p>
+    </div>
     <footer>
         <div class="social">
             <h3 class="foot">
@@ -53,10 +52,12 @@
                 </ul>
             </div>
         </div>
+
     </footer>
-</div>
+</body>
 {% if alert %}
     <script>
         alert("{{ alert }}")
     </script>
 {% endif %}
+

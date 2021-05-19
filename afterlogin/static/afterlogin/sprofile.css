@@ -47,7 +47,7 @@
     color: cadetblue;
   }
 body {
-    background-image: url('../images/2.png');
+    background-image: url("images/2.png");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -58,7 +58,7 @@ body {
 
 .box {
     background-color: #fff;
-    margin-top: 1%;
+    margin-top: 12%;
     margin-left: 17%;
     width: 66%;
     height: 500px;
@@ -96,7 +96,7 @@ body {
     width: 400px;
     height: 400px;
     float: right;
-    margin-top: -305px;
+    margin-top: -200px;
 }
 
 .big {

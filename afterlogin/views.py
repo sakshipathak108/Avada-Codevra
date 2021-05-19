@@ -16,21 +16,22 @@ def join(request):
 
 
 def profile(request, iidd):
-        u = findform.objects.get(pk = iidd)
+        u = findform.objects.get(pk=iidd)
         return render(request, 'afterlogin/profile.html', {'alldetails':u})
 
 
 def find(request):
     if request.method == 'POST':
         fnameevent = request.POST['funame']
-        lnameevent = request.POST['lname']
+        regno = request.POST['reg_no']
         msidevent = request.POST['msid']
         dropdown = request.POST['eventdrop']
         rskills = request.POST['skills']
+        yourskills = request.POST['skill']
 
-        findtable = findform(rqd_skills=rskills, eventchosen=dropdown,fname_event=fnameevent, lname_event=lnameevent,
+        findtable = findform(rqd_skills=rskills, eventchosen=dropdown,fname_event=fnameevent,regno=regno,your_skills=yourskills,
                              msid_event=msidevent)
         findtable.save()
-        return render(request, 'afterlogin/join.html')
+        return render(request, 'afterlogin/findnew.html')
     else:
         return render(request, 'afterlogin/findnew.html')
