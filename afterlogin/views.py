@@ -8,6 +8,8 @@ from django.http import  HttpResponseRedirect
 def contact(request):
     return render(request, 'afterlogin/contactus.html')
 
+def faq(request):
+    return render(request, 'afterlogin/faq.html')
 
 def join(request):
     if request.method == 'POST':

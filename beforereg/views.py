@@ -25,19 +25,19 @@ def signup(request):
             skills_data = request.POST['skills']
             branch_data = request.POST['branch']
 
-            if User.objects.get(email=emailid):
-                return render(request, 'beforereg/login.html',
-                              {'alert': 'account with {} email id already exists,please log in'.format(emailid)})
-            else:
-                usr = User.objects.create_user(username=emailid, email=emailid, password=pwd)
-                usr.first_name = firname
-                usr.last_name = lastname
-                usr.set_password(pwd)
-                usr.save()
+            #if User.objects.get(email=emailid):
+                #return render(request, 'beforereg/login.html',
+                            #  {'alert': 'account with {} email id already exists,please log in'.format(emailid)})
+         #   else:
+            usr = User.objects.create_user(username=emailid, email=emailid, password=pwd)
+            usr.first_name = firname
+            usr.last_name = lastname
+            usr.set_password(pwd)
+            usr.save()
 
-                rex = register_table(user=usr, skills=skills_data, branch=branch_data)
-                rex.save()
-                return render(request, 'beforereg/signup.html',
+            rex = register_table(user=usr, skills=skills_data, branch=branch_data)
+            rex.save()
+            return render(request, 'beforereg/signup.html',
                               {'alert': '{} your account is created successfully'.format(firname)})
         return render(request, 'beforereg/signup.html')
 

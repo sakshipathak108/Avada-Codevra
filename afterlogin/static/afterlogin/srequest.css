@@ -18,7 +18,7 @@ body {
     width: 100%;
     position: fixed;
     top:0;
-    z-index: 1;
+    z-index: 2;
     justify-content: space-between;
     align-items: center;
 
@@ -172,7 +172,7 @@ body {
       max-width: 900px;
       margin: 50px ;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr ;
       grid-column-gap: 40px;
       grid-row-gap: 45px;
   }

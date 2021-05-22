@@ -8,7 +8,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hats n colleagues | Join a team</title>
     <link rel="stylesheet" type="text/css" href="{% static 'afterlogin/sjoin.css' %}">
-
+<script type="text/javascript">
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+                if (revealtop < windowheight - revealpoint) {
+                    reveals[i].classList.add('active');
+                }
+                else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -17,7 +33,7 @@
             <img src="{% static 'beforereg/images/logo1.jpeg' %}" alt="logo" class="logo">
             <nav>
                 <ul>
-                    <li><a href="/dashboard/">Home</a></li>
+                    <li><a href="/dashboard/">Dashboard</a></li>
                     <li><a href="/loggedin/contactus/">Contact us</a></li>
                     <li><a href="#">Join a team</a></li>
                     <li><a href="/loggedin/find/">Find a teammate</a></li>
@@ -94,20 +110,33 @@
     </div>
     {% endfor %}
     {% endif %}
-        <footer>
-            <div class="social">
-                <h3 class="foot">
-                    STAY CONNECTED !
-                </h3>
-                <div class="middle">
-                    <ul class="last">
-                        <li><a href="https://www.linkedin.com/in/anurag-singh-5aa76120b" target="_blank">Linkedin</a>
-                        </li>
-                        <li><a href="https://www.instagram.com/hats.andcolleagues/" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
+     <footer>
+        <div class="social">
+            <h3 class="foot reveal">
+               QUICK LINKS
+            </h3>
+            <div class="fot">
+                <ul class="last">
+                          <li><a href="/dashboard/">Dashboard</a></li>
+              <li><a href="/loggedin/contactus/">Contact us</a></li>
+                <li><a href="/loggedin/faq/">FAQ</a></li>
+
+                </ul>
+            </div><br>
+            <h3 class="feet reveal">
+               WE'RE SOCIAL!
+            </h3>
+            <div class="fet">
+                <ul class="lest">
+                <li><a href="https://www.linkedin.com/in/anurag-singh-5aa76120b" target="_blank">Linkedin </a></li>|
+                <li><a href="https://www.facebook.com/hats.andcolleagues/" target="_blank">Facebook </a></li>|
+                <li><a href="https://twitter.com/HAndcolleagues" target="_blank">Twitter </a></li> |
+               <li><a href="https://www.instagram.com/hats.andcolleagues/" target="_blank">Instagram</a></li>
+
+               </ul>
             </div>
-        </footer>
+        </div>
+    </footer>
 </body>
 
 </html>

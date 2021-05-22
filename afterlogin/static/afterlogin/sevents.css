@@ -18,7 +18,7 @@ body {
     width: 100%;
     position: fixed;
     top:0;
-    z-index: 1;
+    z-index: 2;
     justify-content: space-between;
     align-items: center;
 
@@ -52,7 +52,7 @@ body {
   }
   .up
 {
-    margin-top: 105px;
+    margin-top: 149px;
 }
 .side-navbar {
     background-color: #000;
@@ -74,8 +74,9 @@ body {
     color: #fff;
     font-size: 20px;
     margin: 50px;
-    padding: 10px 50px;
+    padding: 10px 5px;
     border-radius: 10px;
+    text-align: center;
   }
   .side-navbar li a.active{
       background-color: aliceblue;
@@ -87,20 +88,15 @@ body {
   }
   nav ul ul {
       position: absolute;
-      left: 255px;
+      left: 180px;
       width: 250px;
-      top: -200%;
+      top: -110%;
       display: none;
       background-color:#000;
       border-radius: 8px;
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   }
-  nav ul .dropdown {
-      position: relative;
-  }
-  nav ul .dropdown:hover ul {
-      display: initial;
-  }
+
   .blue {
       z-index: -1;
       opacity: 0.4;
@@ -115,7 +111,7 @@ body {
     background-color: rgb(17, 100, 138);
     float: left;
     width: 24%;
-    height: 550px;
+    height: 555px;
     position: fixed;
     z-index: 1;
 }

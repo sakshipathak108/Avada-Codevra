@@ -53,14 +53,14 @@
                 </li>
             </ul>
 
-            <input onclick="myfunc()" type="button" value="Send request" id="mybtn"></input>
+            <input onclick="myfunc()" type="button" value="Send alert" id="mybtn"></input>
             <img src="{% static 'afterlogin/images/photo1.jpeg' %}" alt="man on comp" class="man">
             <script>
                 function myfunc() {
 
                     document.location.href = "test"
                     document.getElementById("mybtn").disabled = true;
-                    document.getElementById("mybtn").value = "Request Sent!";
+                    document.getElementById("mybtn").value = "Alert Sent!";
                     document.getElementById("mybtn").style.backgroundColor = "#777";
 
                 }

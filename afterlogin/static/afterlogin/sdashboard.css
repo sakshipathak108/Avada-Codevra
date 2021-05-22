@@ -18,7 +18,7 @@ body {
     width: 100%;
     position: fixed;
     top:0;
-    z-index: 1;
+    z-index: 2;
     justify-content: space-between;
     align-items: center;
 
@@ -96,12 +96,7 @@ body {
       border-radius: 8px;
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   }
-  nav ul .dropdown {
-      position: relative;
-  }
-  nav ul .dropdown:hover ul {
-      display: initial;
-  }
+
   .blue {
       z-index: -1;
       opacity: 0.4;
@@ -155,8 +150,8 @@ body {
     width: 400px;
     height: 400px;
     position: absolute;
-    top: 43%;
-    left: 70%;
+    margin-top:-25px;
+    margin-right:60px;
 }
 
 .dabba {

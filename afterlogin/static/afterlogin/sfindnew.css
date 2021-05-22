@@ -47,7 +47,7 @@
     color: cadetblue;
   }
   body{
-    background-image: url("images/newbg.jpg");
+    background-image: url("images/grow.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -111,45 +111,3 @@
         background-color: #888;
         color: #fff;
     }
-  .social{
-    background-image: url("images/social.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    width: 100%;
-    height: 500px;
-    margin-top: 120px;
-    
-}
-.foot {
-    color: aliceblue;
-    font-family: sans-serif;
-    position: absolute;
-    top: 30%;
-    left: 30%;
-    font-size: 400%;
-    word-spacing: 5px;
-    font-weight: bold;  
-}
-.middle{
-    
-    position: absolute;
-    top: 55%;
-    left: 40%;
-}
-.middle li {
-    list-style-type:none;
-    float: left;
-    padding: 0px 30px;
-}
-.last li a{
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    font-size: 150%;
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-.last li a:hover{
-    color:black;
-}

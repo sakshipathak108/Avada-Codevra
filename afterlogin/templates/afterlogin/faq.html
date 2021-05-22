@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FAQ</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'afterlogin/sfaq.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="{% static 'beforereg/images/logo1.jpeg' %}" alt="logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/dashboard/">Dashboard</a></li>
+                <li><a href="/loggedin/contactus/">Contact us</a></li>
+                <li><a href="/loggedin/join/">Join a team</a></li>
+                <li><a href="/loggedin/find/">Find a teammate</a></li>
+                <li><a href={% url 'logoutuser' %}>Sign out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <img src="{% static 'beforereg/images/light.jpeg' %}" alt="bg" class="light">
+    <div class="box q1">
+        <h2 style="color: black;">
+            <p><b>1.What is the difference between the ‘find a team’ and ‘join a team’ sections?</b></p>
+        </h2>
+        <h3 style="color: darkmagenta;">
+            <p>The ‘find a team’ section is for those who want to form a new team for a particular event. They will have
+                to fill up the form given in that section in order to get their profiles displayed to potential
+                teammates in the ‘Join a team’ section.
+                The ‘Join a team’ section is for those who are simply looking to join a pre existing team. A user can
+                search for a particular event or profile in the search engine and all the relevant profile cards will be
+                visible, out of which the user can now send a request on the profile they are interested in.</p>
+        </h3><br>
+    </div>
+    <div class="box">
+        <h2 style="color: black;">
+            <p><b>2.Is it necessary to login if we are anyways filling up the ‘Find a teammate’ form?</b></p>
+        </h2>
+        <h3 style="color: darkmagenta;">
+            <p>Yes, you have to login on the site in order to create your profile and get your dashboard.
+                ‘Find a Team mate’ form is optional,only if u r looking to create a team.
+        </h3>
+        </p><br>
+    </div>
+    <div class="box">
+        <h2 style="color: black;">
+            <p><b>3.How do I send a request to join a team?</b></p>
+        </h2>
+        <h3 style="color: darkmagenta;">
+            <p>In the ‘Join a team’ section,click on the ‘Ask to Join’ option in order to let the person know that you
+                are interested in joining their team.</b></p>
+        </h3>
+    </div>
+    <div class="box">
+        <h2 style="color: black;">
+            <p><b>4.How does the person I have asked to join get to see my profile?</b></p>
+        </h2>
+        <h3 style="color: darkmagenta;">
+            <p> When you click on the ‘Ask to Join’ option on the profile card,your profile is directly sent to the
+                ‘People Interested’ section of the ‘Requests’ section of the receiver’s dashboard.</p>
+        </h3><br>
+    </div>
+
+    <div class="box">
+        <h2 style="color: black;">
+            <p><b>5.How do I keep track of the number of requests I have sent?</b></p>
+        </h2>
+        <h3 style="color: darkmagenta;">
+            <p>All the profiles that you have asked to join will be visible in the ‘Your Sent Requests’ section
+                of the ‘Requests’ section of the receiver’s dashboard.</p>
+        </h3><br>
+    </div>
+    <div class="box">
+        <h2 style="color: black;">
+            <p><b>6.What if we want to participate in an event not listed in the drop down list?</b></p>
+        </h2>
+        <h3 style="color: darkmagenta;">
+            <p>Though this situation might not occur as our team keeps tabs on the ongoing events of our
+                college,however, you may contact us through any of the given links,we will add the events
+                accordingly.</p>
+        </h3><br>
+    </div>
+    <div class="box">
+        <h2 style="color: black;">
+            <p><b>7.In case I don’t want to participate in a given event anymore, how do I delete my
+                    form?</b></p>
+        </h2>
+        <h3 style="color: darkmagenta;">
+            <p>Under the events section of your dashboard,all the events for which you have filled up
+                the form are listed along with a delete option. When you click on the delete option,your
+                form along with your profile card for the given event is deleted.</p>
+        </h3><br>
+    </div>
+    <div class="box">
+        <h2 style="color: black;">
+            <p><b>8.How can we reach you in case of a technical problem?</b></p>
+        </h2>
+        <h3 style="color: darkmagenta;">
+            <p><em>You may contact us through any of the given social media links, we shall be more
+                    than willing to help!</em></p>
+        </h3>
+    </div>
+</body>
+
+</html>

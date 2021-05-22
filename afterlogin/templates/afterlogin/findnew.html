@@ -8,7 +8,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hats n colleagues | Find a teammate</title>
     <link rel="stylesheet" type="text/css" href="{% static 'afterlogin/sfindnew.css' %}">
-
+<script type="text/javascript">
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+                if (revealtop < windowheight - revealpoint) {
+                    reveals[i].classList.add('active');
+                }
+                else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -47,21 +63,7 @@
           <input type="submit" name="signin" class="submit top" value="Find a teammate"><br>
         </form>
       </div>
-      </div>
-        <footer>
-            <div class="social">
-                <h3 class="foot">
-                    STAY CONNECTED !
-                </h3>
-                <div class="middle">
-                    <ul class="last">
-                        <li><a href="https://www.linkedin.com/in/anurag-singh-5aa76120b" target="_blank">Linkedin</a>
-                        </li>
-                        <li><a href="https://www.instagram.com/hats.andcolleagues/" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
+    </div>
 </body>
 
 </html>

@@ -14,6 +14,6 @@ urlpatterns = [
     path('dashboard/events/<int:idev>', views.deletetheform, name="del"),
     path('dashboard/interested/', views.interested, name="interest"),
     path('join/search/', views.search, name="search"),
-    path('join/searchbb/', views.searchbybranch, name="searchbb")
-
+    path('join/searchbb/', views.searchbybranch, name="searchbb"),
+    path('faq/', views.faq, name="faq"),
 ]
