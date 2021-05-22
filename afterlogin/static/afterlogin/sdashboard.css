@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding:0;
+}
+body {
+    
+    background-color: #111;
+}
+.logo {
+    float: left;
+    width: 20%;
+  }
+
+  .navbar {
+    display: flex;
+    background-color: black;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  .navbar ul {
+    list-style-type: none;
+  }
+
+  .navbar li {
+    display: inline-block;
+    padding: 0px 8px;
+
+  }
+
+  .navbar li a {
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  li a.active{
+      background-color: aliceblue;
+      color: #262626;
+  }
+  li a:hover{
+      background-color: #fff;
+    color: cadetblue;
+  }
+  .up
+{
+    margin-top: 149px;
+}
+.side-navbar {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+ }
+  .side-navbar ul {
+    list-style-type: none;
+  }
+
+  .side-navbar li {
+    padding: 12px;
+
+  }
+
+  .side-navbar li a {
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    margin: 50px;
+    padding: 10px 5px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .side-navbar li a.active{
+      background-color: aliceblue;
+      color: #262626;
+  }
+  nav li a:hover{
+      background-color: #fff;
+    color: cadetblue;
+  }
+  nav ul ul {
+      position: absolute;
+      left: 180px;
+      width: 250px;
+      top: -110%;
+      display: none;
+      background-color:#000;
+      border-radius: 8px;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  nav ul .dropdown {
+      position: relative;
+  }
+  nav ul .dropdown:hover ul {
+      display: initial;
+  }
+  .blue {
+      z-index: -1;
+      opacity: 0.4;
+      position: fixed;
+      width: 80%;
+      height: 550px;
+  }
+.dibba{
+    margin-top: 97px;
+}
+.left-container {
+    background-color: rgb(17, 100, 138);
+    float: left;
+    width: 24%;
+    height: 555px;
+    position: fixed;
+    z-index: 1;
+}
+.right-container {
+    float: right;
+    width: 76%;
+    height: 560px;
+}
+.main {
+    font-family: sans-serif;
+    font-size: 250%;
+    font-weight: bold;
+    letter-spacing: 13px;
+    margin: 30px 0px 25px;
+    padding-top:20px ;
+    text-decoration: underline;
+    text-align: center;
+    color: #000;
+}
+.face {
+    text-align: center;
+}
+.picture {
+    margin: 40px;
+    height: 125px;
+    width: 125px;
+    border-radius: 62px;
+  }
+.welcome {
+    font-size: 300%;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.man {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 43%;
+    left: 70%;
+}
+
+.dabba {
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.5s ease-in-out;
+  }
+
+  .dabba:hover {
+    transform: translateY(20px);
+  }
+  .dabbe
+  {
+      max-width: 900px;
+      margin: 50px ;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 40px;
+      grid-row-gap: 45px;
+  }
+
+  .upper {
+      text-align: center;
+    width: 400px;
+    height: 130px;
+    background-color: rgb(95, 49, 168);
+  }
+
+  .lower {
+    background-color: #fff;
+    height:300px;
+    width: 400px;
+    color: #000;
+  }
+
+  .pic {
+    margin-top: 80px;
+    height: 105px;
+    width: 105px;
+    border-radius: 52px;
+  }
+
+ .naam {
+     padding-top: 60px;
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+  }
+  .naam a {
+      text-decoration: none;
+  }
+  .naam a:hover {
+      color: #777;
+}
+  .little {
+    margin: 10px 20px 10px;
+    font-size: 110%;
+    text-align: center;
+    color: #777
+  }
+.info {
+    margin:25px 40px;
+    height: 500px;
+    width: 90%;
+    background-color: #fff;
+    color: black;
+    border-radius: 16px;
+    padding: 0px 0px 0px 35px;
+    display: flex;
+    opacity: 0.95;
+}
+.ques {
+    color: black;
+    font-size: 180%;
+}
+.ans {
+    color: #777;
+    font-size: 180%;
+    margin-bottom: 18px;
+}
+.part {
+    flex: 1;
+}
+.part2 {
+    position: absolute;
+    top: 37%;
+    left: 70%;
+}
+.man {
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    top: 41%;
+    left: 72%;
+    z-index: -1;
+}

@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hats n colleagues | Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'afterlogin/sevents.css'%}">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="{% static "afterlogin/images/logo1.jpeg" %}" alt="logo" class="logo">
+        <nav>
+            <ul>
+              <li><a href="/dashboard/">Dashboard</a></li>
+              <li><a href="/loggedin/contactus/">Contact us</a></li>
+              <li><a href="/loggedin/join/">Join a team</a></li>
+              <li><a href="/loggedin/find/">Find a teammate</a></li>
+              <li><a href="{% url 'logoutuser' %}">Sign out</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="dibba">
+        <div class="left-container">
+            <div class="face">
+                <img src="{% static "afterlogin/images/pic.png" %}" alt="picture" class="picture">
+            </div>
+            <div class="welcome">
+                Hey {{ user.first_name }}!
+            </div>
+            <div class="up">
+                <nav>
+                    <div class="side-navbar">
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li class="dropdown">
+                                <a href="#">Requests</a>
+                                <ul>
+                                    <li><a href="pending.html">Pending</a></li>
+                                    <li><a href="accepted.html">Accepted</a></li>
+                                    <li><a href="sent.html">Sent</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Delete account</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="right-container">
+            <img src="{% static "afterlogin/images/blue.jpeg" %}" alt="bg" class="blue">
+            <div class="main">You Are Searching Teammates For</div>
+            <div class="box">
+                <div class="cover">
+                    <div class="r2 r">
+                        Event name
+                    </div>
+                    <div class="r3 r">
+                        Delete
+                    </div>
+                </div>
+                {% for event in de %}
+                <div class="cover">
+                    <div class="row2">
+                            {{ event.eventchosen }}
+                    </div>
+                    <div class="row3">
+                        <button class="key"><a href="{% url "afterlogin:del" event.id %}">Delete</a> </button>
+                    </div>
+                </div>
+                 {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

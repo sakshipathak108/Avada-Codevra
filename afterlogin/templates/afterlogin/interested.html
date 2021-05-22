@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hats n colleagues | Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'afterlogin/srequest.css' %}">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="{% static "afterlogin/images/logo1.jpeg" %}" alt="logo" class="logo">
+        <nav>
+            <ul>
+              <li><a href="/dashboard/">Dashboard</a></li>
+              <li><a href="/loggedin/contactus/">Contact us</a></li>
+              <li><a href="/loggedin/join/">Join a team</a></li>
+              <li><a href="/loggedin/find/">Find a teammate</a></li>
+              <li><a href="{% url 'logoutuser' %}">Sign out</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="dibba">
+        <div class="left-container">
+            <div class="face">
+                <img src="{% static "afterlogin/images/pic.png" %}" alt="picture" class="picture">
+            </div>
+            <div class="welcome">
+                Hey {{ user.first_name }} !
+            </div>
+            <div class="up">
+                <nav>
+                    <div class="side-navbar">
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li class="dropdown">
+                                <a href="#">Requests</a>
+                                <ul>
+                                    <li><a href="asked.html">Ask to join</a></li>
+                                    <li><a href="#">People interested</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Edit</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="right-container">
+            <img src="{% static "afterlogin/images/blue.jpeg" %}" alt="bg" class="blue">
+            <div class="main">PEOPLE INTERESTED</div>
+            <div class="dabbe">
+                {% for friend in fr.get_friends %}
+                <div class="dabba">
+                    <div class="upper">
+                        <img src="{% static "afterlogin/images/pic.png" %}" alt="pic" class="pic">
+                    </div>
+                    <div class="lower">
+                        <p class="naam"><a href="#">{{ friend.first_name }}</a></p>
+                        <p class="little">{{ friend }}</p>
+                        <p class="little"> {{ friend.register_table.skills  }}</p>
+                        <p class="little"> {{ friend.register_table.branch  }}</p>
+                        <p class="little"> {{ fr.eventchosen }}</p>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

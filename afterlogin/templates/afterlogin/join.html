@@ -31,24 +31,46 @@
     </div>
     <div class="box">
         <div class="right">
-            <form action="" method="post">
+            <form action="/loggedin/join/" method="post">
                 {% csrf_token %}
                 <p class="txt">
                     <label for="choose">CHOOSE AN EVENT : </label>
                 </p><br>
                 <input list="events" name="eventjoin" placeholder="Select" class="rect">
-                <datalist id="events" >
+                <datalist id="events">
                     <option value="Devjam">
                     <option value="Codestart">
-                    <option value="Hackathon">
+                    <option value="Robo club competition">
                     <option value="Hack 36">
                 </datalist>
-              <!-- <input type="submit" value="Submit" class="button" > -->
-                <button name="submitttt" class="button" type="submit" value="Submit" >
-                        submit
-                </button>
+                <input type="submit" value="Submit" class="button">
             </form>
         </div>
+        <div class="box1">
+        <div class="right">
+            <form action="/loggedin/join/searchbb/" method="get">
+                {% csrf_token %}
+                <p class="txt">
+                    <label for="choose">Branch </label>
+                </p><br>
+                <input type="text" name="branchh" placeholder="Select" class="rect">
+
+                <input type="submit" value="Submit" class="button">
+            </form>
+        </div>
+          </div>
+            <div class="box2">
+        <div class="right">
+            <form action="/loggedin/join/search/" method="get">
+                {% csrf_token %}
+                <p class="txt">
+                    <label for="choose">Required skills</label>
+                </p><br>
+                <input type="text" name="rq_skills" placeholder="Select" class="rect">
+                <input type="submit" value="Submit" class="button">
+            </form>
+        </div>
+                  </div>
         <br>
         <div>
             <p class="text">WANNA JOIN A TEAM...</p>

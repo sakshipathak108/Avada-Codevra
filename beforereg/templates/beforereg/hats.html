@@ -7,63 +7,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hats n colleagues | Home</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'beforereg/style.css' %}">
+    <link rel="stylesheet" href="{% static 'beforereg/stylenew.css' %}">
+    <script type="text/javascript">
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+                if (revealtop < windowheight - revealpoint) {
+                    reveals[i].classList.add('active');
+                }
+                else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="navbar">
-          <img src="{% static 'beforereg/images/logo1.jpeg' %}" alt="logo" class="logo">
-          <nav>
+    <div class="navbar">
+        <img src="{% static 'beforereg/images/logo1.jpeg' %}" alt="logo" class="logo">
+        <nav>
             <ul>
-              <li><a href="">Home</a></li>
+               <li><a href="">Home</a></li>
               <li><a href="/contactus/">Contact us</a></li>
               <li><a href="/signup/">Sign up</a></li>
               <li><a href="/login/">Sign in</a></li>
             </ul>
-          </nav>
-        </div>
-      </div>
+        </nav>
+    </div>
     <header class="canva">
         <div class="text">
+
             <p class="big">Have trouble finding teammates? That's where we come in</p>
             <p class="small">First year of college, fest season on, a surge of events and competitions charging right
-                at. You wanna make the most of it, but you are still just getting to know people...<br> Wander not...
+                at you. Wanna make the most of it, but you are still just getting to know people...<br> Wander not...
                 Coz this is exactly where our site comes in. Just login on our site and you can see the list of events
                 being held and will also be able to find a bunch of like-minded people to team up with !</p>
         </div>
     </header>
     <section class="flip">
-        <div class="pic1">
+        <div class="pic1 reveal">
             <img src="{% static 'beforereg/images/first.png' %}" class="first" alt="team1">
         </div>
         <p class="info1">
-        <h2 class="info1 larget">Know the peeps</h2>
-        <p class="info1 smallt">Still finding your way around college and looking for people you may be competitive
+        <h2 class="info1 larget reveal">Know the people</h2>
+        <p class="info1 smallt reveal">Still finding your way around college and looking for people you may be
+            competitive
             with? We
             have it sorted
             for you, as here you'll come across a bunch of your colleagues interested in the same things as you are.
         </p>
         </p>
-        <div class="pic1">
+        <div class="pic1 reveal">
             <img src="{% static 'beforereg/images/third.png' %}" class="first" alt="team3">
         </div>
         <div class="vl">
             <p class="info2">
-            <h2 class="info2 large2 larget">Know the events</h2>
-            <p class="info2 smallt">It is easy to get confused when you have a plethora of events to choose from. Here,
+            <h2 class="info2 large2 larget reveal">Know the events</h2>
+            <p class="info2 smallt reveal">It is easy to get confused when you have a plethora of events to choose from.
+                Here,
                 you get
                 the entire
                 list of
                 upcoming events, find the ones you are interested in and signup! No chance of losing track now,huh?
             </p>
             </p>
-            <div class="pic2">
+            <div class="pic2 reveal">
                 <img src="{% static 'beforereg/images/second.png' %}" class="sec" alt="team2">
             </div>
             <p class="info2">
-            <h2 class="info2 large2 larget">Team up!</h2>
-            <p class="info2 smallt"> Once you find your potential teammates, all you need to do is get in touch with
+            <h2 class="info2 large2 larget reveal">Team up!</h2>
+            <p class="info2 smallt reveal"> Once you find your potential teammates, all you need to do is get in touch
+                with
                 them and
                 there you go!
                 Your team's ready.
@@ -71,20 +90,44 @@
             </p>
         </div>
     </section>
-    <footer>
+    <div class="zigzag ">
+        <div class="reveal">
+            No one can whistle a symphony, it takes a whole orchestra to play it.</div>
+        <div class="author">
+            <div class="reveal">-H. E. Luccock</div>
+        </div>
+    </div>
+    </div>
+   <footer>
         <div class="social">
-            <h3 class="foot">
-                WE'RE A SOCIAL!
+            <h3 class="foot reveal">
+               QUICK LINKS
             </h3>
-            <div class="middle">
+            <div class="fot">
                 <ul class="last">
-                    <li><a href="https://www.linkedin.com/in/anurag-singh-5aa76120b" target="_blank">Linkedin</a>
-                    </li>
-                    <li><a href="https://www.instagram.com/_anurag_2912/" target="_blank">Instagram</a></li>
+                    <li><a href=" ">Home</a></li>
+                    <li><a href="/contactus/">Contact Us</a></li>
+                    <li><a href="/signup/">Sign Up</a></li>
+
+                    <li><a href="/login/">Sign In</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
                 </ul>
+            </div><br>
+            <h3 class="feet reveal">
+               WE'RE SOCIAL!
+            </h3>
+            <div class="fet">
+                <ul class="lest">
+                <li><a href="https://www.linkedin.com/in/anurag-singh-5aa76120b" target="_blank">Linkedin </a></li>|
+                <li><a href="https://www.facebook.com/hats.andcolleagues/" target="_blank">Facebook </a></li>|
+                <li><a href="https://twitter.com/HAndcolleagues" target="_blank">Twitter </a></li> |
+               <li><a href="https://www.instagram.com/hats.andcolleagues/" target="_blank">Instagram</a></li>
+
+               </ul>
             </div>
         </div>
     </footer>
+
 </body>
 
 </html>

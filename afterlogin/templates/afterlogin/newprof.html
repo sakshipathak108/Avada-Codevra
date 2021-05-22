@@ -1,22 +1,24 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hats n colleagues | Profile</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'afterlogin/sprofile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'afterlogin/newsprofile.css' %}">
 
 </head>
+
 <body>
     <div class="dabba">
         <div class="navbar">
             <img src="{% static 'beforereg/images/logo1.jpeg' %}" alt="logo" class="logo">
             <nav>
                 <ul>
-                    <li><a href="/dashboard/">Dashboard</a></li>
+                     <li><a href="/dashboard/">Dashboard</a></li>
                     <li><a href="/loggedin/contactus/">Contact us</a></li>
                     <li><a href="/loggedin/join/">Join a team</a></li>
                     <li><a href="/loggedin/find/">Find a teammate</a></li>
@@ -30,15 +32,15 @@
             <div class="textm"><br>{{ alldetails.eventchosen }}</div>
         </div>
         <div class="less">
-            <div class="big">{{ alldetails.fname_event }}</div>
+            <div class="big"> {{ alldetails.fname_event }} </div>
             <ul class="list">
                 <li>
-                    <span class="heading">MS Team's ID: </span>
-                    <span class="material">{{ alldetails.msid_event }}</span>
+                    <span class="heading">Branch: </span>
+                    <span class="material">{{ dets.branch }}</span>
                 </li>
                 <li>
-                    <span class="heading">Registration number: </span>
-                    <span class="material">{{ alldetails.regno }}</span>
+                    <span class="heading">Achievements: </span>
+                    <span class="material">blah blah blah</span>
                 </li>
                 <li>
                     <span class="heading">Skills:</span>
@@ -46,12 +48,26 @@
                 </li>
                 <li>
                     <span class="heading">Required Skills: </span>
-                    <spann class="material">{{ alldetails.rqd_skills}}
-                    </spann>
+                    <span class="material"> {{ alldetails.rqd_skills}}
+                        </span>
                 </li>
             </ul>
+
+            <input onclick="myfunc()" type="button" value="Send request" id="mybtn"></input>
             <img src="{% static 'afterlogin/images/photo1.jpeg' %}" alt="man on comp" class="man">
+            <script>
+                function myfunc() {
+
+                    document.location.href = "test"
+                    document.getElementById("mybtn").disabled = true;
+                    document.getElementById("mybtn").value = "Request Sent!";
+                    document.getElementById("mybtn").style.backgroundColor = "#777";
+
+                }
+            </script>
         </div>
     </div>
 </body>
+
 </html>
+

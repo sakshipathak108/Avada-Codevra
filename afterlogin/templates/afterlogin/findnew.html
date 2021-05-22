@@ -17,7 +17,7 @@
             <img src="{% static 'beforereg/images/logo1.jpeg' %}" alt="logo" class="logo">
             <nav>
                 <ul>
-                    <li><a href="/dashboard/">Home</a></li>
+                    <li><a href="/dashboard/">Dashboard</a></li>
                     <li><a href="/loggedin/contactus/">Contact us</a></li>
                     <li><a href="/loggedin/join/">Join a team</a></li>
                     <li><a href="">Find a teammate</a></li>
@@ -34,12 +34,13 @@
                 <datalist id="events" >
                     <option value="Devjam">
                     <option value="Codestart">
-                    <option value="Hackethon">
+                    <option value="Hackathon">
                     <option value="Hack 36">
                 </datalist>
             </div>
-          <input type="text" name="funame" class="top" placeholder="Full Name" required>
-          <input type="text" name="msid" class="top" placeholder="MS Team's Id" required>
+          <input type="text" name="funame" class="top" value="{{ user.first_name }} {{ user.last_name }}" disabled >
+          <input type="text" name="msid" class="top"  value="{{ user.email }}" disabled >
+          <input type="text" name="branch" class="top"  value="{{ b.branch }}" readonly >
           <input type="text" name="skill" class="top" placeholder="Your skills specific to the event" required>
           <input type="number" name="reg_no" class="top" placeholder="Registration number" required>
           <textarea class="skill top" name="skills" id="skills" placeholder="Skills you are looking for in your teammate " cols="120" rows="9" required></textarea>

@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hats n colleagues | Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'afterlogin/sdashboard.css' %}">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="{% static 'beforereg/images/logo1.jpeg' %}" alt="logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/dashboard/">Dashboard</a></li>
+                <li><a href="/loggedin/contactus/">Contact us</a></li>
+                <li><a href="/loggedin/join/">Join a team</a></li>
+                <li><a href="/loggedin/find/">Find a teammate</a></li>
+                <li><a href={% url 'logoutuser' %}>Sign out</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="dibba">
+        <div class="left-container">
+            <div class="face">
+                <img src="{% static "afterlogin/images/pic.png" %}" alt="picture" class="picture">
+            </div>
+            <div class="welcome">
+                Hey {{ user.first_name }} !
+            </div>
+            <div class="up">
+                <nav>
+                    <div class="side-navbar">
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li class="dropdown">
+                                <a href="#">Requests</a>
+                                <ul>
+                                    <li><a href="asked.html">Ask to join</a></li>
+                                    <li><a href="/loggedin/dashboard/interested">People interested</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/loggedin/dashboard/events/">Events</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="right-container">
+            <img src="{% static "afterlogin/images/blue.jpeg" %}" alt="bg" class="blue">
+            <div class="info">
+                <div class="part">
+                    <div class="main">INFORMATION</div>
+                    <div class="ques">Name</div>
+                    <div class="ans">{{ user.first_name }} {{ user.last_name }}</div>
+                    <div class="ques">MS team's ID</div>
+                    <div class="ans">{{ user.email }}</div>
+                    <div class="ques">Skills</div>
+                    <div class="ans">{{ dd.skills }}</div>
+                    <div class="ques">Achievements</div>
+                    <div class="ans">blah blah blah</div>
+                </div>
+                <div class="part part2">
+                    <div class="ques">Registration number</div>
+                    <div class="ans"> 23000000 </div>
+                    <div class="ques">Branch</div>
+                    <div class="ans">{{ dd.branch }}</div>
+                </div>
+                <img src="{% static 'afterlogin/images/photo1.jpeg' %}" alt="man on comp" class="man">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+{% if alert %}
+    <script>
+        alert("{{ alert }}")
+    </script>
+{% endif %}
